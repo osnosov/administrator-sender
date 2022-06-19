@@ -1,0 +1,47 @@
+{
+  "name": "administrator-sender",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "format": "prettier --write .",
+    "lint": "eslint --ext .js, --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js, --ignore-path .gitignore .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osnosov/administrator-sender.git"
+  },
+  "keywords": [],
+  "author": "Nosov Oleg <nosovoleg@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osnosov/administrator-sender/issues"
+  },
+  "homepage": "https://github.com/osnosov/administrator-sender#readme",
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.2",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.7.1"
+  }
+}

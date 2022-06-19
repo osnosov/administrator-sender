@@ -1,2 +1,1 @@
-# administrator-sender
-administrator sender
+# Administrator sender

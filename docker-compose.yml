@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  bot-hook:
+    container_name: administrator-sender
+    image: administrator-sender:0.0.1
+    build:
+      context: ./
+      target: production
+      dockerfile: ./Dockerfile
+    command: npm run start
+    environment:
+      - 'AMQP_HOST=${AMQP_HOST}'
+      - 'QUEUE_SENDER=${QUEUE_SENDER}'
+    networks:
+      - administrator
+    volumes:
+      - /usr/src/node_modules
+    restart: unless-stopped
+
+networks:
+  administrator:
