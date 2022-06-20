@@ -6,7 +6,6 @@ services:
     image: administrator-sender:0.0.1
     build:
       context: ./
-      target: production
       dockerfile: ./Dockerfile
     command: npm run start
     environment:
